@@ -1,4 +1,4 @@
-# Simple Shop Simulation
+# Monte Carlo Shop
 
 This is a simple shop simulation demonstrating the usage of random variates drawn from various statistical distributions (using packages from `@stdlib/random/base`) to model real world characteristics of the interactions. It simulates customers arriving at a shop, potentially making a purchase, and then leaving. The simulation speed and customer behavior can be adjusted through the user interface.
 
