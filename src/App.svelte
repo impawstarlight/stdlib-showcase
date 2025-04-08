@@ -1,6 +1,6 @@
 <script>
   import shopIcon from './assets/shop.svg';
-  import customeIcon from './assets/customer.png';
+  import customerIcon from './assets/customer.png';
   import { uniform, exponential, beta } from '@stdlib/random-base';
 
   let revenue = 0;
@@ -10,7 +10,7 @@
   let isSimulating = false;
   let isInShop = false;
 
-  // Simulation parameters
+  // Adjustable parameters
   let customersPerHour = 10;
   let purchaseProbability = 0.7;
   let minPurchasePrice = 5;
@@ -41,7 +41,7 @@
       lastCustomerPurchase = 'No purchase'
     }
 
-    // Queue next customer
+    // Queue the next customer
     nextCustomerArrival = getNextArrivalTime();
     isInShop = false;
     setTimeout(() => isInShop = true, 0);
@@ -56,6 +56,7 @@
     isSimulating = false;
     isInShop = false;
     clearInterval(clockTimer);
+
   }
 
 
@@ -74,7 +75,7 @@
       <img
         id='customer-icon'
         class={isInShop ? 'in-shop' : ''}
-        src={customeIcon}
+        src={customerIcon}
         alt='Customer icon'
         style='--transition-duration: {nextCustomerArrival/simulationSpeed}s;'
         on:transitionend={purchase}
