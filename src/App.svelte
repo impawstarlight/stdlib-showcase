@@ -32,9 +32,8 @@
   }
 
   function purchase() {
-    console.log('I was here');
     if (uniform(0, 1) < purchaseProbability) {
-      let purchasePrice = (beta(20, 20) * (maxPurchasePrice - minPurchasePrice) + minPurchasePrice).toFixed(2);
+      let purchasePrice = (beta(5, 5) * (maxPurchasePrice - minPurchasePrice) + minPurchasePrice).toFixed(2);
       revenue += +purchasePrice;
       lastCustomerPurchase = '+$'+purchasePrice;
     } else {
@@ -63,6 +62,7 @@
 </script>
 
 <main>
+
   <div id='stonks'>
     <h4>Time passed: {simulationClock} minutes</h4>
     <h4>Next Customer: in {nextCustomerArrival} minutes</h4>
@@ -118,16 +118,14 @@
     </div>
   </section>
 
-
 </main>
 
 <style>
-  * {
-    /* outline: 1px solid red; */
-  }
+
   main {
     max-width: 80vw;
   }
+
   #stonks {
     text-align: start;
     display: grid;
@@ -136,13 +134,12 @@
     width: 560px;
     margin: auto;
   }
-  #stonks > * {
-    flex: 1 1 0;
-  }
+
   #shop-container {
     padding: 20px;
     border: 1px solid #ccc;
   }
+
   #icons-container {
     width: 100%;
     height: 160px;
@@ -153,6 +150,7 @@
     position: absolute;
     left: 0;
   }
+
   #customer-icon {
     width: 80px;
     position: absolute;
@@ -160,6 +158,7 @@
     right: 0;
     /* z-index: 1; */
   }
+
   #customer-icon.in-shop {
     right: calc(100% - 140px);
     transition: right var(--transition-duration) ease-in-out;
